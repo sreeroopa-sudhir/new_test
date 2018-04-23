@@ -1,0 +1,9 @@
+from datetime import date, datetime
+import time
+def calculate_tts( str timeRaw1, str timeRaw2):
+    date_string1 = timeRaw1[:18] + timeRaw1[-2:]
+    date_string2 = timeRaw2[:18] + timeRaw2[-2:]
+    a = datetime.strptime(date_string1, "%d-%b-%y %I.%M.%S%p")
+    b = datetime.strptime(date_string2, "%d-%b-%y %I.%M.%S%p")
+    tts = (b-a).total_seconds()
+    return(tts)
